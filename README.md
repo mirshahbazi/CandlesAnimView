@@ -1,25 +1,25 @@
 # CandlesAnimView
 ---
-&emsp;&emsp;动画设计想法来自于Gal Shir的GIF设计，右边的蜡烛吹灭左边的蜡烛，并不断循环作为Loading，加入了停止动画的接口，但是暂时没有想好结束动画应该用什么形式展示更自然，目前动画结束为停止蜡烛。
+&emsp;&emsp;The design idea comes from Gal Shir's GIF design, the right candle blows out the left side of the candle, and constantly circulates as a move, joined the interface to stop the animation, but temporarily did not want to end the animation in what form should show more natural, the current animation End to stop candles
 
 # DEMO
 ---
 ![](https://github.com/Yellow5A5/CandlesAnimView/blob/master/demo.gif)
 
-# 结构
+# Structure
 ---
 ![](https://github.com/Yellow5A5/CandlesAnimView/blob/master/structure.png)
 
 # API
 ---
-&emsp;&emsp;暂时只写了结束动画的接口，但也加入了一些蜡烛动作的回调，如果有需要可以自行拓展其他方面的效果。
+&emsp;&emsp;Temporarily only wrote the end of the animation interface, but also joined the candle action callback, if necessary, can expand their own other aspects of the effect。
 
 ```
-    //监听动画结束
+    //Listen to the end of the animation
     private StopAnimListener mStopAnimListener;
 
     public interface StopAnimListener{
-        //结束动画调用后启动的方法。
+        //End the animation call after the method is started
         public void OnAnimStop();
     }
 
@@ -30,7 +30,7 @@
 
 ```
     /*
-     调用Loading结束动画。
+     Call the end of the animation
      */
     public void stopAnim(){
         mAnimControler.stopAnimation();
@@ -49,9 +49,9 @@
         });
 ```
 
-# 调用方式
+# Call the way
 ---
- 1. 配置XML
+ 1. Configure XML
 
 ```
     <com.yellow5a5.candlesanimlib.CandlesAnimView
@@ -61,12 +61,16 @@
         android:layout_height="wrap_content" />
 ```
 
- 2. Java代码创建
+ 2. Java code created
 ```
         CandlesAnimView mCandlesAnimView = new CandlesAnimView(MainActivity.this);
         //...addView..
 ```
 
-# 其它
+# other
 ---
-&emsp;&emsp;目前动画结束为停止吹熄蜡烛。适配上通过View本身的宽高的比例进行设置并不理想，可自行修改固定mHeight和mWidth的内部逻辑完善。
+&emsp;&emsp;The current animation ends for the stop blowout candles. Adaptation through the View itself by the ratio of the width of the set is not ideal, you can modify the fixed mHeight and mWidth internal logic perfect.
+
+#Change
+
+&emsp;&emsp;By Mohammad ALi Mir Shahbazi (MAM)
